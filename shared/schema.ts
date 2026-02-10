@@ -1,21 +1,22 @@
-import { pgTable, text, serial, integer, boolean, jsonb } from "drizzle-orm/pg-core";
+import { sqliteTable, text, integer, blob } from "drizzle-orm/sqlite-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const tours = pgTable("tours", {
-  id: serial("id").primaryKey(),
+export const tours = sqliteTable("tours", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   description: text("description").notNull(),
   price: integer("price").notNull(), // in USD
   duration: text("duration").notNull(), // e.g. "14 Days"
   location: text("location").notNull(), // e.g. "Everest Region"
   imageUrl: text("image_url").notNull(),
-  isFeatured: boolean("is_featured").default(false).notNull(),
-  itinerary: jsonb("itinerary").$type<string[]>().notNull(), // Array of daily activities
+  isFeatured: integer("is_featured", { mode: "boolean" }).default(false).notNull(),
+    // social handles removed (instagram/facebook/tiktok)
+    itinerary: blob("itinerary", { mode: "json" }).$type<string[]>().notNull(), // Array of daily activities
 });
 
-export const bookings = pgTable("bookings", {
-  id: serial("id").primaryKey(),
+export const bookings = sqliteTable("bookings", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   tourId: integer("tour_id").notNull(),
   name: text("name").notNull(),
   email: text("email").notNull(),
@@ -25,8 +26,8 @@ export const bookings = pgTable("bookings", {
   status: text("status").default("pending").notNull(), // pending, confirmed
 });
 
-export const inquiries = pgTable("inquiries", {
-  id: serial("id").primaryKey(),
+export const inquiries = sqliteTable("inquiries", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   email: text("email").notNull(),
   message: text("message").notNull(),

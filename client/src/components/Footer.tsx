@@ -1,4 +1,4 @@
-import { Mountain, Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Mountain, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "wouter";
 
 export function Footer() {
@@ -9,25 +9,57 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Mountain className="h-6 w-6 text-white" />
-              <span className="font-display font-bold text-xl">NepalTravels</span>
+              <span className="font-display font-bold text-xl">
+                NepalTravels
+              </span>
             </div>
             <p className="text-secondary-foreground/80 text-sm leading-relaxed">
-              Experience the majesty of the Himalayas with authentic, sustainable, and unforgettable journeys across Nepal.
+              Experience the majesty of the Himalayas with authentic,
+              sustainable, and unforgettable journeys across Nepal.
             </p>
           </div>
 
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4 text-white">Quick Links</h3>
+            <h3 className="font-display text-lg font-semibold mb-4 text-white">
+              Quick Links
+            </h3>
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/tours" className="hover:text-white transition-colors">Our Tours</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li>
+                <Link href="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tours"
+                  className="hover:text-white transition-colors"
+                >
+                  Our Tours
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4 text-white">Popular Destinations</h3>
+            <h3 className="font-display text-lg font-semibold mb-4 text-white">
+              Popular Destinations
+            </h3>
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
               <li>Everest Base Camp</li>
               <li>Annapurna Circuit</li>
@@ -38,7 +70,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4 text-white">Contact Us</h3>
+            <h3 className="font-display text-lg font-semibold mb-4 text-white">
+              Contact Us
+            </h3>
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
@@ -54,18 +88,24 @@ export function Footer() {
               </li>
             </ul>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-secondary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-secondary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} NepalTravels. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} NepalTravels. All rights reserved.
+          </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <a href="#" className="hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
